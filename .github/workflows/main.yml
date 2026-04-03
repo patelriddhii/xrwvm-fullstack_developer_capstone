@@ -49,6 +49,6 @@ jobs:
 
     - name: Run Linter
       run: |
-        # Ignore migrations and the "Line Too Long" error for now to pass CI
-        flake8 . --exclude=**/migrations/* --ignore=E501
-        echo "Linted all the python files successfully"
+        # Finds all JS files in server/database and runs JSHint
+        find ./server/database -name "*.js" -exec jshint {} +
+        echo "Linted all the js files successfully"
